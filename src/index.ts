@@ -96,3 +96,14 @@ const user: Person = {
 // objeto.id = 1; no marca un error por que solo es de lectura.
 objeto.name = "Miguel Angel";
 const users: Person[] = [];
+
+const processTwo: (a: number) => string = (age: number) => {
+  return age > 17 ? "Enter" : "Exit";
+};
+
+function processThree(age: number, message?: string): string {
+  if (age > 17) return `Enter ${message}`;
+  return "Exit";
+}
+console.info(processThree(17));
+console.info(processThree(18, "Miguel"));
