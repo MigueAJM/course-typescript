@@ -39,3 +39,23 @@ const numbers_two: Array<number> = [];
 
 // tupla: variable que conteniene un set de datos ordenados.
 const tupla: [number, string[]] = [1, ["Miguel Angel", "Jimenez"]];
+
+// Enumns: Tipo enumerado, una lista de constantes las cuales se pueden referenciar en un futuro.
+const small = "s";
+const medium = "m";
+const large = "l";
+const xlarge = "xl";
+
+enum Sizes {
+  Small,
+  Medium,
+  Large,
+  Xlarge,
+}
+
+const enum LoadingState {
+  Idle,
+  Loading,
+  Success,
+  Error,
+}
