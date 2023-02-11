@@ -114,3 +114,69 @@ console.info(processThree(18, "Miguel"));
 function ErrorUser(): never {
   throw new Error("Error: user invalid.");
 }
+type Developer = {
+  web: {
+    code: string[];
+    framework: string[];
+  };
+  app: {
+    code: string[];
+    framework: string[];
+  };
+  orm: string[];
+  sgbd: string[];
+};
+const MigueAJM: Developer = {
+  web: {
+    code: [
+      "HTML",
+      "CSS",
+      "SAS",
+      "JavaScript",
+      "PHP",
+      "SQL",
+      "TypeScript",
+      "Node JS",
+      "Inertia JS",
+    ],
+    framework: [
+      "Materialize",
+      "Bootstrap",
+      "Laravel",
+      "Symfony",
+      "React",
+      "ExpressJS",
+      "Angular",
+    ],
+  },
+  app: {
+    code: ["kotlin", "JavaScript", "Swift", "TypeScript"],
+    framework: ["Ionic"],
+  },
+  orm: ["Eloquent", "Doctrine", "Sequelize"],
+  sgbd: ["MySQL", "PostgreSQL", "SQL Server"],
+};
+const processFour: (a: Developer) => void = (user: Developer) =>
+  console.log({ user });
+
+processFour(MigueAJM);
+
+// Union type: Es cuando se puede utilizar mas de un solo tipo para referirse a una variable.
+let puntaje: number | string = 98;
+puntaje = "Hello world";
+
+type Animal = {
+  id: number;
+  state: string;
+};
+
+type User = {
+  id: number;
+  name: string;
+};
+let object_two: Animal | User = { id: 1, state: "", name: "" };
+
+function proccessFive(n: number | string): number {
+  if (typeof n === "number") return n;
+  return parseInt(n);
+}
