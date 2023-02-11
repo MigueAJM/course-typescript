@@ -36,3 +36,6 @@ const numbers: number[] = [1, 2, 3];
 const checks: boolean[] = [true, false];
 const numbers_two: Array<number> = [];
 // numbers.map(value => value.) el autocompletado sugire metodos de acuerdo al tipo de dato del array
+
+// tupla: variable que conteniene un set de datos ordenados.
+const tupla: [number, string[]] = [1, ["Miguel Angel", "Jimenez"]];
