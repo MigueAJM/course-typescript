@@ -59,3 +59,40 @@ const enum LoadingState {
   Success,
   Error,
 }
+
+const state = LoadingState.Success;
+
+const objeto: {
+  readonly id: number;
+  name?: string;
+  size: Sizes;
+} = {
+  id: 1,
+  name: "",
+  size: Sizes.Small,
+};
+type Direction = {
+  number: number;
+  stret: string;
+  country: string;
+};
+type Person = {
+  readonly id: number;
+  name?: string;
+  size: Sizes;
+  direction: Direction;
+};
+
+const user: Person = {
+  id: 1,
+  name: "",
+  size: Sizes.Small,
+  direction: {
+    number: 70,
+    stret: "Emiliano",
+    country: "Mexico",
+  },
+};
+// objeto.id = 1; no marca un error por que solo es de lectura.
+objeto.name = "Miguel Angel";
+const users: Person[] = [];
