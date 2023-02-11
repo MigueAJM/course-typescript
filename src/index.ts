@@ -30,3 +30,9 @@ variable = 42;
 function process(config: any) {
   return config;
 }
+
+const animal: string[] = ["animal uno", "animal dos", "animal tres"];
+const numbers: number[] = [1, 2, 3];
+const checks: boolean[] = [true, false];
+const numbers_two: Array<number> = [];
+// numbers.map(value => value.) el autocompletado sugire metodos de acuerdo al tipo de dato del array
