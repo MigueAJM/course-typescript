@@ -107,3 +107,10 @@ function processThree(age: number, message?: string): string {
 }
 console.info(processThree(17));
 console.info(processThree(18, "Miguel"));
+
+// Tipo Never: Se utiliza cunado una funcion nunca va a alcanzar un punto donde vaya a retornar algo.
+// Se utiliza para cuando se retornan Exceptions.
+
+function ErrorUser(): never {
+  throw new Error("Error: user invalid.");
+}
