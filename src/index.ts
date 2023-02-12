@@ -228,3 +228,10 @@ arr1?.[0];
 
 const fn1: any = null;
 fn1?.();
+
+// Nullish coalescing operator:
+const difficulty: number | null = null;
+const user2 = {
+  username: "Miguel",
+  difficulty: difficulty ?? 1,
+};
