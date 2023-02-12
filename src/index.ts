@@ -263,18 +263,12 @@
 // // }
 
 class Character {
-  readonly id: number;
-  name: string;
-  level: number;
-  private _hp: number;
-  carrer?: string;
-
-  constructor(id: number, name: string, level: number, hp: number) {
-    this.id = id;
-    this.name = name;
-    this.level = level;
-    this._hp = hp;
-  }
+  constructor(
+    public readonly id: number,
+    public name: string,
+    public level: number,
+    private _hp: number
+  ) {}
 
   upLevel(): number {
     this.level = this.level + 1;
