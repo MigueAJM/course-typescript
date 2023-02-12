@@ -263,10 +263,11 @@
 // // }
 
 class Character {
-  id: number;
+  readonly id: number;
   name: string;
   level: number;
   private _hp: number;
+  carrer?: string;
 
   constructor(id: number, name: string, level: number, hp: number) {
     this.id = id;
