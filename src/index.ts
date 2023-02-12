@@ -235,3 +235,12 @@ const user2 = {
   username: "Miguel",
   difficulty: difficulty ?? 1,
 };
+
+// type assertion
+
+const elem: any = null;
+const elem1 = elem as number;
+
+const input = document.getElementById("username") as HTMLInputElement;
+const input1 = <HTMLInputElement>document.getElementById("username");
+input.value;
