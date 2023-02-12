@@ -250,3 +250,14 @@ function lala(x: string | number) {
   if (typeof x === "number") x.valueOf();
   if (typeof x === "string") x.concat("");
 }
+
+// type Unknown
+// function process1(algo: unknown) {
+//   if (typeof algo === "number") algo.valueOf();
+//   if (typeof algo === "string") algo.concat("");
+//   if (algo instanceof String) {
+//     algo.todo();
+//     algo.other();
+//     algo.genkidama();
+//   }
+// }
