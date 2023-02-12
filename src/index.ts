@@ -209,3 +209,22 @@ function toNumber(s: string | null | undefined) {
 
 const n = toNumber(null);
 const nu = toNumber(undefined);
+
+// Optional chaining
+function getUser(id: number) {
+  if (id < 0) return null;
+  return {
+    id: 1,
+    name: "Miguel",
+    created_at: new Date(),
+  };
+}
+
+const user_ = getUser(-1);
+console.log("user: ", user_?.created_at);
+
+const arr1 = null;
+arr1?.[0];
+
+const fn1: any = null;
+fn1?.();
