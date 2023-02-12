@@ -180,3 +180,32 @@ function proccessFive(n: number | string): number {
   if (typeof n === "number") return n;
   return parseInt(n);
 }
+
+// Intersection type: Nos permiten tener las propiedades de mutiples tipos.
+type Audit = {
+  created_at: string;
+  modified_at: string;
+};
+
+type Product = {
+  name: string;
+};
+
+const product: Audit & Product = {
+  created_at: "",
+  modified_at: "",
+  name: "",
+};
+
+// Literal type:
+type Fibo = 0 | 1 | 2 | 3 | 5;
+const nDeFibo: Fibo = 1;
+
+// Nullable type:
+function toNumber(s: string | null | undefined) {
+  if (!s) return 0;
+  return parseInt(s);
+}
+
+const n = toNumber(null);
+const nu = toNumber(undefined);
