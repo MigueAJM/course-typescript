@@ -279,9 +279,18 @@ class Character {
     this._hp = this._hp + cantidad;
     return this._hp;
   }
+
+  get hp(): number {
+    return this._hp;
+  }
+
+  set hp(cantidad: number) {
+    this._hp = this._hp + cantidad;
+  }
 }
 
 const character = new Character(1, "migueajm", 1, 100);
 character.upLevel();
 character.changeHP(-10);
 console.log(character);
+console.log(character.hp);
