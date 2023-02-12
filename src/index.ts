@@ -244,3 +244,9 @@ const elem1 = elem as number;
 const input = document.getElementById("username") as HTMLInputElement;
 const input1 = <HTMLInputElement>document.getElementById("username");
 input.value;
+
+// type narrowing:
+function lala(x: string | number) {
+  if (typeof x === "number") x.valueOf();
+  if (typeof x === "string") x.concat("");
+}
