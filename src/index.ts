@@ -266,13 +266,13 @@ class Character {
   id: number;
   name: string;
   level: number;
-  hp: number;
+  private _hp: number;
 
   constructor(id: number, name: string, level: number, hp: number) {
     this.id = id;
     this.name = name;
     this.level = level;
-    this.hp = hp;
+    this._hp = hp;
   }
 
   upLevel(): number {
@@ -281,8 +281,8 @@ class Character {
   }
 
   changeHP(cantidad: number): number {
-    this.hp = this.hp + cantidad;
-    return this.hp;
+    this._hp = this._hp + cantidad;
+    return this._hp;
   }
 }
 
