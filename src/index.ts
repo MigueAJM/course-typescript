@@ -263,6 +263,8 @@
 // // }
 
 class Character {
+  carrer?: string;
+  private static _team: number = 0;
   constructor(
     public readonly id: number,
     public name: string,
@@ -273,6 +275,10 @@ class Character {
   upLevel(): number {
     this.level = this.level + 1;
     return this.level;
+  }
+
+  static addCharacter(): void {
+    Character._team++;
   }
 
   changeHP(cantidad: number): number {
@@ -287,10 +293,17 @@ class Character {
   set hp(cantidad: number) {
     this._hp = this._hp + cantidad;
   }
+
+  static get team(): number {
+    return Character._team;
+  }
 }
 
 const character = new Character(1, "migueajm", 1, 100);
+const character2 = new Character(2, "Angel", 1, 120);
 character.upLevel();
 character.changeHP(-10);
 console.log(character);
 console.log(character.hp);
+Character.addCharacter();
+console.log(Character.team);
