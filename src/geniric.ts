@@ -22,3 +22,23 @@ async function main() {
   const user = await fetchData<User>("/user");
   user.name;
 }
+
+type Computer = {
+  power: () => void;
+  down: () => void;
+};
+class Developer<T> {
+  computer: T;
+  constructor(t: T) {
+    this.computer = t;
+  }
+}
+
+const developer = new Developer<Computer>({
+  power: () => {},
+  down: () => {},
+});
+const developer_two = new Developer<string>("Hello world!");
+
+developer.computer;
+developer_two.computer.toLocaleUpperCase();
