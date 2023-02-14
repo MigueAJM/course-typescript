@@ -40,3 +40,12 @@ class Dog implements Animal {
     return "oin";
   }
 }
+
+class DictionaryUser {
+  [id: string]: string;
+}
+
+const dictionary_user = new DictionaryUser();
+dictionary_user["1a"] = "user 1";
+dictionary_user["2a"] = "user 2";
+console.log(dictionary_user);
