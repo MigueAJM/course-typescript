@@ -1,4 +1,4 @@
-class BasicData {
+abstract class BasicData {
   constructor(
     public name: string,
     public description: string,
@@ -12,6 +12,8 @@ class BasicData {
   get fullDescription(): string {
     return `${this.name} - ${this.description}`;
   }
+
+  abstract save(): void;
 }
 
 class Product extends BasicData {
@@ -28,6 +30,10 @@ class Product extends BasicData {
 
   override get fullDescription(): string {
     return `Product: ${super.fullDescription}`;
+  }
+
+  save(): void {
+    console.log("Save");
   }
 }
 
@@ -57,6 +63,10 @@ class Category extends BasicData {
 
   override get fullDescription(): string {
     return `Category: ${super.fullDescription}`;
+  }
+
+  save(): void {
+    console.log("Save");
   }
 }
 
