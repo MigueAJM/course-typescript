@@ -8,6 +8,10 @@ class BasicData {
   get fullYear() {
     return this.created_at.getFullYear();
   }
+
+  get fullDescription(): string {
+    return `${this.name} - ${this.description}`;
+  }
 }
 
 class Product extends BasicData {
@@ -20,6 +24,10 @@ class Product extends BasicData {
     created_by: number
   ) {
     super(name, description, created_at, created_by);
+  }
+
+  override get fullDescription(): string {
+    return `Product: ${super.fullDescription}`;
   }
 }
 
@@ -46,9 +54,13 @@ class Category extends BasicData {
   addProduct(product: Product) {
     this.products.push(product);
   }
+
+  override get fullDescription(): string {
+    return `Category: ${super.fullDescription}`;
+  }
 }
 
 const category = new Category("Phones", "", new Date(), 1);
 category.addProduct(product);
 
-console.log(product, category);
+console.log(product.fullDescription);
