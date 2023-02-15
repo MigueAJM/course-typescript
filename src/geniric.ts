@@ -104,3 +104,20 @@ class StateUser extends State<UserTwo> {
 }
 
 const state_user = new StateUser();
+
+type Calendar = {
+  id: number;
+  source: string;
+  dueno: string;
+};
+
+const calendar: Calendar = { id: 1, source: "Google", dueno: "I" };
+
+function getProp<T>(object: T, property: keyof T): unknown {
+  return object[property];
+}
+
+getProp<Calendar>(calendar, "id");
+getProp<Calendar>(calendar, "source");
+getProp<Calendar>(calendar, "dueno");
+getProp<Calendar>(calendar, "string");
