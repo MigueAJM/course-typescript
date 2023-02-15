@@ -78,3 +78,29 @@ function print<T extends UserTwo>(t: T): T {
 }
 
 print({ id: "1", name: "migueajm" });
+
+class State<T> {
+  protected data: T[] = [];
+
+  add(t: T): void {
+    this.data.push(t);
+  }
+  get state(): T[] {
+    return this.data;
+  }
+}
+
+type ObjectId = {
+  id: string;
+};
+class StateRemove<T extends ObjectId> extends State<T> {
+  remove(id: string) {
+    this.data = this.data.filter((x) => x.id !== id);
+  }
+}
+
+class StateUser extends State<UserTwo> {
+  resetPassword(): void {}
+}
+
+const state_user = new StateUser();
