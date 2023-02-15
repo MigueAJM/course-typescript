@@ -147,4 +147,4 @@ const readOnlyP: Readonly<Point> = {
   description: "Description",
 };
 
-readOnlyP.x = 23;
+// readOnlyP.x = 23;
