@@ -120,4 +120,31 @@ function getProp<T>(object: T, property: keyof T): unknown {
 getProp<Calendar>(calendar, "id");
 getProp<Calendar>(calendar, "source");
 getProp<Calendar>(calendar, "dueno");
-getProp<Calendar>(calendar, "string");
+
+type Point = {
+  x: number;
+  y: number;
+  description?: string;
+};
+
+type PointOptional = Partial<Point>;
+type PointRequired = Required<Point>;
+const keyVal: Record<string, number> = {
+  "soy un string": 42,
+};
+type kv = { [key: string]: number };
+
+const p: Omit<Point, "descrioption" | "y"> = {
+  x: 1,
+  //   y: 2,
+};
+
+const p1: Pick<Point, "x" | "y"> = { x: 1, y: 2 };
+
+const readOnlyP: Readonly<Point> = {
+  x: 1,
+  y: 2,
+  description: "Description",
+};
+
+readOnlyP.x = 23;
