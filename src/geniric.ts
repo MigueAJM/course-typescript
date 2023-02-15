@@ -64,3 +64,17 @@ function fetchStockt(): KeyValue<string, number> {
     value: 45,
   };
 }
+// interface UserTwo {
+//   id: string;
+//   name: string;
+// }
+
+class UserTwo {
+  constructor(public id: string) {}
+}
+function print<T extends UserTwo>(t: T): T {
+  console.log(t);
+  return t;
+}
+
+print({ id: "1", name: "migueajm" });
