@@ -1,0 +1,1 @@
+export declare function helloWorld(message: string): string
