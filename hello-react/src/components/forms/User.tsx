@@ -1,14 +1,14 @@
 import { ChangeEventHandler, MouseEventHandler, useState } from "react"
 import Button from "../Button"
 import Input from "../Input"
-interface UserFormState {
+export interface UserFormState {
     name: string,
-    lastname: string
+    username: string
 }
 
 const InitialValue: UserFormState = {
     name: '',
-    lastname: ''
+    username: ''
 }
 
 interface UserFormProps {
@@ -19,6 +19,7 @@ export default function UserForm({ handleSubmit}: UserFormProps) {
     const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         const name = e.target.name as keyof UserFormState
         setForm({...form, [name]: e.target.value})
+        console.log(form)
     }
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -29,8 +30,8 @@ export default function UserForm({ handleSubmit}: UserFormProps) {
     return (
         <>
             <Input value={form.name} name="name" placeholder='Nombre' handleChange={handleChange} />
-            <Input value={form.lastname} name="lastname" placeholder='Apellido' handleChange={handleChange} />
-            <Button handleClick={handleClick}>Primary</Button>
+            <Input value={form.username} name="username" placeholder='Usuario' handleChange={handleChange} />
+            <Button handleClick={handleClick}>Submit</Button>
         </>
     )
 }
