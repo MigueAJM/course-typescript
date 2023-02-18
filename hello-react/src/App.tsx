@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-        <UserForm></UserForm>
+        <UserForm handleSubmit={user => { console.log(user)}}></UserForm>
     </div>
   );
 }

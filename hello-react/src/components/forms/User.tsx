@@ -10,7 +10,11 @@ const InitialValue: UserFormState = {
     name: '',
     lastname: ''
 }
-export default function UserForm() {
+
+interface UserFormProps {
+    handleSubmit: (user: UserFormState) => void
+}
+export default function UserForm({ handleSubmit}: UserFormProps) {
     const [form, setForm] = useState(InitialValue);
     const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         const name = e.target.name as keyof UserFormState
@@ -19,12 +23,13 @@ export default function UserForm() {
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         e.preventDefault()
-        console.log(form)
+        handleSubmit(form)
+        setForm(InitialValue)
     }
     return (
         <>
-            <Input name="name" placeholder='Nombre' handleChange={handleChange} />
-            <Input name="lastname" placeholder='Apellido' handleChange={handleChange} />
+            <Input value={form.name} name="name" placeholder='Nombre' handleChange={handleChange} />
+            <Input value={form.lastname} name="lastname" placeholder='Apellido' handleChange={handleChange} />
             <Button handleClick={handleClick}>Primary</Button>
         </>
     )
